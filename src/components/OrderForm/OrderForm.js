@@ -4,7 +4,7 @@ import { connect } from 'react-redux';
 import { makeOrder } from './../../actions';
 import { postOrder } from '../../apiCalls';
 
-class OrderForm extends Component {
+export class OrderForm extends Component {
   constructor(props) {
     super();
     this.props = props;
@@ -71,11 +71,11 @@ class OrderForm extends Component {
   }
 }
 
-const mapStateToProps = state => ({
+export const mapStateToProps = state => ({
   orders: state.orders,
 })
 
-const mapDispatchToProps = dispatch => ({
+export const mapDispatchToProps = dispatch => ({
   makeOrder: order => dispatch(makeOrder(order)),
 });
 
