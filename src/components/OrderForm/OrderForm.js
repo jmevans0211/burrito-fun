@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import { connect } from 'react-redux';
 
 import { makeOrder } from './../../actions';
+import { postOrder } from '../../apiCalls';
 
 class OrderForm extends Component {
   constructor(props) {
@@ -27,7 +28,9 @@ class OrderForm extends Component {
     const {makeOrder} = this.props
     e.preventDefault();
     if (this.state.ingredients.length !==0) {
-      makeOrder(this.state)
+      const newOrder = this.state
+      makeOrder(newOrder);
+      postOrder(newOrder);
       this.clearInputs();
     }
   }
