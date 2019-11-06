@@ -25,8 +25,10 @@ class OrderForm extends Component {
   handleSubmit = e => {
     const {makeOrder} = this.props
     e.preventDefault();
-    makeOrder(this.state)
-    this.clearInputs();
+    if (this.state.ingredients.length !==0) {
+      makeOrder(this.state)
+      this.clearInputs();
+    }
   }
 
   clearInputs = () => {
