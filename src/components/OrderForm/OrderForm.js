@@ -8,6 +8,7 @@ class OrderForm extends Component {
     super();
     this.props = props;
     this.state = {
+      id: Date.now(),
       name: '',
       ingredients: []
     };
