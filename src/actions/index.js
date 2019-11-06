@@ -8,7 +8,7 @@ export const makeOrder = order => ({
   order,
 });
 
-export const deleteOrder = id => ({
-  type: 'DELETE_ORDER',
+export const cancelOrder = id => ({
+  type: 'CANCEL_ORDER',
   id
 });

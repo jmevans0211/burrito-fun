@@ -4,8 +4,8 @@ export const orders = (state = [], action) => {
       return action.orders;
     case 'MAKE_ORDER':
       return [...state, action.order];
-    case 'DELETE_ORDER':
-      
+    case 'CANCEL_ORDER':
+      state = state.filter(item => item.id !== action.id )
       return state
     default:
       return state;

@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import { bindActionCreators } from 'redux';
-import { setOrders } from '../../actions';
+import { setOrders, cancelOrder } from '../../actions';
 import { getOrders, deleteOrder } from '../../apiCalls';
 import './Orders.css';
 
@@ -19,7 +19,9 @@ export class Orders extends Component {
   }
   
 handleDelete(e) {
+  e.preventDefault()
   const id = e.target.id
+  cancelOrder(id)
   deleteOrder(id)
 }
 
@@ -34,7 +36,7 @@ handleDelete(e) {
               return <li key={ingredient}>{ingredient}</li>
             })}
           </ul>
-          <button id={order.id} type="button" onClick={(e) => this.handleDelete(e)}>Delete Order</button>
+          <button id={order.id} type="button" onClick={(e) => this.handleDelete(e)}>Cancel Order</button>
         </div>
       )
     });
