@@ -12,17 +12,14 @@ export class Orders extends Component {
     }
   }
   componentDidMount() {
-    console.log('*****', this.props)
     const {setOrders} = this.props
     getOrders()
     .then(data => setOrders(data.orders))
     .catch(err => console.error('Error fetching:', err));
   }
-
   
   render() {
     const {orders} = this.props
-    console.log('***', orders)
     const orderEls = orders.map(order => {
       return (
         <div key={order.id} className="order">

@@ -14,7 +14,6 @@ const App = () =>  {
             <h1>Burrito Builder</h1>
             <OrderForm />
           </header>
-          
           <Orders />
         </main>
       );

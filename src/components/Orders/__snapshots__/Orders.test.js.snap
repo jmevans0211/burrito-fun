@@ -1,0 +1,33 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Orders should match snapshot 1`] = `
+<section>
+  <div
+    className="order"
+    key="1"
+  >
+    <h3>
+      Jeannie
+    </h3>
+    <ul
+      className="ingredient-list"
+    >
+      <li
+        key="lettuce"
+      >
+        lettuce
+      </li>
+      <li
+        key="tomato"
+      >
+        tomato
+      </li>
+      <li
+        key="onion"
+      >
+        onion
+      </li>
+    </ul>
+  </div>
+</section>
+`;
