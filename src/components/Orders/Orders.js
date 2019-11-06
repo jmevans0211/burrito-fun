@@ -9,9 +9,7 @@ export class Orders extends Component {
   constructor() {
     super();
     this.state = {
-
     }
-
   }
   componentDidMount() {
     console.log('*****', this.props)
@@ -20,7 +18,7 @@ export class Orders extends Component {
     .then(data => setOrders(data.orders))
     .catch(err => console.error('Error fetching:', err));
   }
-  
+
   
   render() {
     const {orders} = this.props
