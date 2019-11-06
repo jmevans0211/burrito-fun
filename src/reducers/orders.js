@@ -6,8 +6,12 @@ export const orders = (state = [], action) => {
       return [...state, action.order];
     case 'CANCEL_ORDER':
       state = state.filter(item => item.id !== action.id )
-      return state
+      return state;
     default:
       return state;
-  }
-};
+      }
+    };
+    
+    // let index = state.indexOf(action.id)
+    // state.splice(index, 1)
+

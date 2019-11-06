@@ -6,11 +6,7 @@ import { getOrders, deleteOrder } from '../../apiCalls';
 import './Orders.css';
 
 export class Orders extends Component {
-  constructor() {
-    super();
-    this.state = {
-    }
-  }
+
   componentDidMount() {
     const {setOrders} = this.props
     getOrders()
@@ -18,12 +14,13 @@ export class Orders extends Component {
     .catch(err => console.error('Error fetching:', err));
   }
   
-handleDelete(e) {
-  e.preventDefault()
-  const id = e.target.id
-  cancelOrder(id)
-  deleteOrder(id)
-}
+  handleDelete(e) {
+    const {cancelOrder} = this.props
+    e.preventDefault()
+    const id = e.target.id
+    cancelOrder(id)
+    deleteOrder(id)
+  }
 
   render() {
     const {orders} = this.props
@@ -55,6 +52,7 @@ export const mapStateToProps = ({ orders }) => ({
 export const mapDispatchToProps = dispatch => (
   bindActionCreators({
     setOrders,
+    cancelOrder
   }, dispatch)
 );
 
