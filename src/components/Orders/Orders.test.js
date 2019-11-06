@@ -1,5 +1,6 @@
 import React from 'react';
 import { shallow } from 'enzyme';
+import { setOrders } from '../../actions';
 import { Orders, mapStateToProps, mapDispatchToProps } from './Orders';
 
 describe('Orders', () => {
@@ -54,6 +55,26 @@ describe('mapStateToProps', () => {
 
 
 describe('mapDispatchToProps', () => {
+  it('should set orders', () => {
+    const mockOrders = [
+      {
+        id: 7,
+        name: "Princess Buttercup",
+        ingredients: ['salt', 'n', 'peppa']
+      },
+      {
+        id: 8,
+        name: "Princess GumDrop",
+        ingredients: ['suga', 'n', 'spyce']
+      }
+    ]
+    const mockDispatch = jest.fn();
+    const actionToDispatch = setOrders('SET_ORDERS', mockOrders);
+    const mappedProps = mapDispatchToProps(mockDispatch);
 
+    mappedProps.setOrders('SET_ORDERS', mockOrders);
+
+    expect(mockDispatch).toHaveBeenCalledWith(actionToDispatch);
+  });
 
 }); //<<--- end of mapDISPATCHtoPRops describe block
